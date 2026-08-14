@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://twh2uaauhd0x"]
 
 [ext_resource type="PackedScene" uid="uid://cvesp07vlqto5" path="res://Character/player.tscn" id="1_n2kac"]
-[ext_resource type="Script" uid="uid://rq1oqpj3igte" path="res://Scenes/platforms_spawners.gd" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://rq1oqpj3igte" path="res://Scripts/platforms_spawners.gd" id="2_bo1nx"]
 
 [node name="Main" type="Node2D" unique_id=458506105]
 

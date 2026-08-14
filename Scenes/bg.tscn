@@ -16,8 +16,9 @@ scale = Vector2(1168.5, 656.50006)
 texture = SubResource("CanvasTexture_ha8nf")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1530065036]
+motion_mirroring = Vector2(474, 328)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=674397542]
-position = Vector2(631.50006, 364.5)
-scale = Vector2(2.6603374, 2.246951)
+position = Vector2(-53, 4.000061)
 texture = ExtResource("1_sjcup")
+centered = false
