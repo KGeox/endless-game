@@ -9,3 +9,7 @@
 
 [node name="PlatformsSpawners" type="Node" parent="." unique_id=825482791]
 script = ExtResource("2_bo1nx")
+
+[node name="Timer" type="Timer" parent="PlatformsSpawners" unique_id=2053571851]
+
+[connection signal="timeout" from="PlatformsSpawners/Timer" to="PlatformsSpawners" method="_on_timer_timeout"]

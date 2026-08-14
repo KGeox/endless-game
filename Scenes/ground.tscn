@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dpgfm35vngqp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qvte6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_688p1"]
+size = Vector2(1195, 114)
+
+[node name="Ground" type="StaticBody2D" unique_id=1360930341]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784942600]
+self_modulate = Color(0.15686275, 0.16078432, 0.19215687, 1)
+scale = Vector2(1198.75, 126.25001)
+texture = SubResource("CanvasTexture_qvte6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736375517]
+shape = SubResource("RectangleShape2D_688p1")

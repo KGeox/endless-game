@@ -5,4 +5,10 @@ extends Node
 
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	var random_platform: Node = platforms.pick_random()
+	var random_platform_instance: Node = random_platform.instantiate()
+	add_child(random_platform_instance)
+
+
+
+																				  

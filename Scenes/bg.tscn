@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://do4ax1dx71ds8"]
+
+[ext_resource type="Texture2D" uid="uid://dvqgmcxsrhpig" path="res://OIP (5).png" id="1_sjcup"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mdo6f"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ha8nf"]
+
+[node name="Bg" type="ParallaxBackground" unique_id=482747772]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1706282093]
+modulate = Color(0.27450982, 1, 1, 1)
+material = SubResource("CanvasItemMaterial_mdo6f")
+position = Vector2(583.75, 327.75003)
+scale = Vector2(1168.5, 656.50006)
+texture = SubResource("CanvasTexture_ha8nf")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1530065036]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=674397542]
+position = Vector2(631.50006, 364.5)
+scale = Vector2(2.6603374, 2.246951)
+texture = ExtResource("1_sjcup")
