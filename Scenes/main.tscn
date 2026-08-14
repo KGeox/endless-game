@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://twh2uaauhd0x"]
 
 [ext_resource type="PackedScene" uid="uid://cvesp07vlqto5" path="res://Character/player.tscn" id="1_n2kac"]
+[ext_resource type="Script" uid="uid://rq1oqpj3igte" path="res://Scenes/platforms_spawners.gd" id="2_bo1nx"]
 
 [node name="Main" type="Node2D" unique_id=458506105]
 
 [node name="Player" parent="." unique_id=1376763124 instance=ExtResource("1_n2kac")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=498931083]
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=17817328]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=190007050]
+[node name="PlatformsSpawners" type="Node" parent="." unique_id=825482791]
+script = ExtResource("2_bo1nx")
