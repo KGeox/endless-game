@@ -1,20 +1,28 @@
 [gd_scene format=3 uid="uid://cx7tvjx3bxtfv"]
 
 [ext_resource type="PackedScene" uid="uid://do4ax1dx71ds8" path="res://Scenes/bg.tscn" id="1_6phgx"]
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_81xng"]
-[ext_resource type="PackedScene" uid="uid://dpgfm35vngqp" path="res://Scenes/ground.tscn" id="2_81xng"]
-[ext_resource type="PackedScene" uid="uid://cvesp07vlqto5" path="res://Character/player.tscn" id="3_wqkje"]
+[ext_resource type="Script" uid="uid://c5n8mu8su3vi2" path="res://Scripts/Level.gd" id="1_81xng"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://bik/scenes/player.tscn" id="5_wqkje"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6phgx"]
 
 [node name="MAIN" type="Node" unique_id=573592180]
 script = ExtResource("1_81xng")
 
 [node name="Bg" parent="." unique_id=482747772 instance=ExtResource("1_6phgx")]
 
-[node name="Ground" parent="." unique_id=1360930341 instance=ExtResource("2_81xng")]
-position = Vector2(594, 610)
+[node name="Player2" parent="." unique_id=1556368156 instance=ExtResource("5_wqkje")]
+position = Vector2(1675, 4240)
 
-[node name="Player" parent="." unique_id=1376763124 instance=ExtResource("3_wqkje")]
-position = Vector2(88, 470)
+[node name="Camera2D" type="Camera2D" parent="Player2" unique_id=1975947302]
+zoom = Vector2(0.1, 0.1)
+limit_enabled = false
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1975947302]
-position = Vector2(577, 326)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=792011718]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1984932380]
+modulate = Color(0.050980393, 0.21568628, 0.15686275, 1)
+top_level = true
+material = SubResource("CanvasItemMaterial_6phgx")
+position = Vector2(4816, 5254)
+polygon = PackedVector2Array(-4833, -997, -4571, -772, -3881, -389, -2997, 525, -523, 630, -412, 540, -369, 521, -315, 531, 220, 1035, 789, 638, 4125, 165, 4545, -877, 6028, -2124, 6516, -2244, 7265, -1997, 7483, -1787, 7625, -1532, 7850, -1300, 7962, -1165, 8165, -812, 8262, -662, 8375, -527, 8615, -340, 9042, 27, 9169, 125, 9537, 230, 9799, 267, 10099, 297, 10474, 230, 10751, 35, 10886, -85, 11164, -85, 11613, -55, 11810, -238, 12005, -364, 12417, -333, 12813, -160, 13184, -118, 13897, 372, 14324, 297, 14579, 297, 15209, 357, 15546, 702, 16079, 792, 16139, 755, 16461, 380, 16528, 102, 17188, -962, 17458, -1142, 17675, -1195, 17818, -1195, 17915, -820, 18020, -677, 18418, -572, 18830, -422, 19115, -227, 19242, -70, 19325, 50, 19557, 185, 19662, 177, 19767, 305, 19865, 462, 20037, 665, 20454, 1011, 21481, 1049, 21833, 794, 22246, 284, 22583, 21, 23310, 246, 23535, 389, 24262, 194, 24502, 284, 24652, 269, 24922, 569, 25079, 591, 25222, 561, 25661, 696, 26403, 629, 27835, 644, 29462, 666, 30009, 554, 31032, 770, 31566, 650, 34251, 798, 35080, 528, 35470, 153, 35733, -49, 36542, -57, 36460, 6758, -4763, 6997)
