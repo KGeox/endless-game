@@ -2,6 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://cyu686hucg7wv" path="res://wiil/GrapeSoda.ttf" id="1_28flt"]
 [ext_resource type="Script" uid="uid://btxgo1r2j440a" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Script" uid="uid://crljnhvh7s34n" path="res://Scripts/audio_control.gd" id="3_1ehe0"]
+[ext_resource type="Script" uid="uid://dodq8mwa8245x" path="res://Scenes/fullscreen_control.gd" id="4_ce3w2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_erv1k"]
+modulate_color = Color(0.66492164, 0.66492164, 0.6649216, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
 bg_color = Color(1, 1, 1, 1)
@@ -20,8 +25,13 @@ bg_color = Color(0.7548252, 0.7548252, 0.754825, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28flt"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_erv1k"]
-modulate_color = Color(0.66492164, 0.66492164, 0.6649216, 1)
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_48xlc"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1ehe0"]
+color = Color(0.0017840144, 0.102416955, 0.51855344, 1)
+thickness = 6
 
 [node name="MainMenu" type="Control" unique_id=1565729275]
 layout_mode = 3
@@ -32,7 +42,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_48xlc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=291718725]
+[node name="Background" type="Panel" parent="." unique_id=486265313]
+layout_mode = 0
+offset_left = 361.5
+offset_top = 456.0
+offset_right = 790.5
+offset_bottom = 456.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_erv1k")
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=291718725]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,7 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 9
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=984355228]
+[node name="Button" type="Button" parent="MainButtons" unique_id=984355228]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -61,7 +82,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=392240175]
+[node name="Button2" type="Button" parent="MainButtons" unique_id=392240175]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -75,7 +96,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Options"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1738711444]
+[node name="Button3" type="Button" parent="MainButtons" unique_id=1738711444]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -89,9 +110,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Exit"
 
-[node name="Background" type="Panel" parent="VBoxContainer" unique_id=486265313]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_erv1k")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2086189616]
+bus = &"Music"
 
 [node name="Label" type="Label" parent="." unique_id=1207298882]
 layout_mode = 1
@@ -100,10 +120,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.0
-offset_top = -255.0
-offset_right = 79.0
-offset_bottom = -180.0
+offset_left = -334.0
+offset_top = -316.0
+offset_right = 356.21967
+offset_bottom = -210.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.011787773
@@ -115,6 +135,76 @@ text = "Endless Bicycle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[node name="Options" type="Panel" parent="." unique_id=657627465]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -211.0
+offset_right = 278.0
+offset_bottom = 252.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options" unique_id=248066524]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Options/Label" unique_id=1810513390]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 297.0
+offset_right = 488.0
+offset_bottom = 380.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
+text = "Back"
+
+[node name="AudioControl" type="HSlider" parent="Options" unique_id=888471265]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 108.0
+offset_right = 459.0
+offset_bottom = 161.0
+theme_override_styles/slider = SubResource("StyleBoxLine_48xlc")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_1ehe0")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_1ehe0")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_1ehe0")
+audio_bus_name = "Music"
+
+[node name="FullscreenControl" type="CheckButton" parent="Options" unique_id=14581236]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 156.0
+offset_right = 464.0
+offset_bottom = 214.0
+text = "FullScreen"
+script = ExtResource("4_ce3w2")
+
+[connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Label/Back" to="." method="_on_back_options_pressed"]
+[connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]
+[connection signal="toggled" from="Options/FullscreenControl" to="Options/FullscreenControl" method="_on_toggled"]

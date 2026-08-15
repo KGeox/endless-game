@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="endlessGame"
+run/main_scene="uid://po7wffwqjp1l"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://chxmii85oyodq"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
