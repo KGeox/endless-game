@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dk0pwi3g46lvl"]
+
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://bik/scenes/player.tscn" id="1_vn7o3"]
+
+[node name="level1" type="Node2D" unique_id=813107989]
+
+[node name="Player" parent="." unique_id=1556368156 instance=ExtResource("1_vn7o3")]
+position = Vector2(-1942, -778)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=250527158]
+offset = Vector2(4000, 0)
+zoom = Vector2(0.15, 0.15)
+position_smoothing_enabled = true
