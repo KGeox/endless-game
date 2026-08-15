@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://po7wffwqjp1l"]
+
+[ext_resource type="FontFile" uid="uid://cyu686hucg7wv" path="res://wiil/GrapeSoda.ttf" id="1_28flt"]
+[ext_resource type="Script" uid="uid://btxgo1r2j440a" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
+bg_color = Color(0.6125778, 0.6125779, 0.6125777, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(0.7548252, 0.7548252, 0.754825, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28flt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_erv1k"]
+modulate_color = Color(0.66492164, 0.66492164, 0.6649216, 1)
+
+[node name="MainMenu" type="Control" unique_id=1565729275]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=291718725]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.5
+offset_top = -133.0
+offset_right = 214.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=984355228]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=392240175]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1738711444]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
+text = "Exit"
+
+[node name="Background" type="Panel" parent="VBoxContainer" unique_id=486265313]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_erv1k")
+
+[node name="Label" type="Label" parent="." unique_id=1207298882]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -255.0
+offset_right = 79.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.011787773
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 105
+text = "Endless Bicycle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
