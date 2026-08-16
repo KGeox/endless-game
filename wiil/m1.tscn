@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cpaygewhekesm"]
+
+[ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="1_4lnxb"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="2_wv06l"]
+[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="3_i17u5"]
+[ext_resource type="Script" uid="uid://mc8hrt0xxmjg" path="res://addons/rmsmartshape/shapes/mesh_cache.gd" id="4_haiph"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="5_4fxly"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="6_3so4q"]
+
+[sub_resource type="Resource" id="Resource_7k30a"]
+script = ExtResource("2_wv06l")
+_point_order = PackedInt32Array()
+
+[sub_resource type="Resource" id="Resource_h8iyg"]
+script = ExtResource("4_haiph")
+
+[sub_resource type="Resource" id="Resource_3tcow"]
+script = ExtResource("6_3so4q")
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=639913977]
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="." unique_id=1014135908]
+position = Vector2(56, -56)
+script = ExtResource("1_4lnxb")
+_points = SubResource("Resource_7k30a")
+_mesh_cache = SubResource("Resource_h8iyg")
+shape_material = SubResource("Resource_3tcow")
+metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b7pswbfa0p16a"]
+
+[ext_resource type="Texture2D" uid="uid://bpyd6bjc1qqi7" path="res://wiil/temporaryPlatform.png" id="1_hug74"]
+[ext_resource type="Script" uid="uid://dsamuh2msclxq" path="res://wiil/temporary_platform.gd" id="1_lh2et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hug74"]
+size = Vector2(16, 18)
+
+[sub_resource type="Animation" id="Animation_lh2et"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_4udrf"]
+resource_name = "Vanish"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8333333, 1, 1.2, 1.4, 1.6, 1.8333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hug74"]
+_data = {
+&"RESET": SubResource("Animation_lh2et"),
+&"Vanish": SubResource("Animation_4udrf")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hug74"]
+height = 24.0
+
+[node name="temporary platform" type="StaticBody2D" unique_id=1492069404]
+script = ExtResource("1_lh2et")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=536880388]
+texture = ExtResource("1_hug74")
+hframes = 11
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=126489478]
+visible = false
+shape = SubResource("RectangleShape2D_hug74")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1339249047]
+libraries/ = SubResource("AnimationLibrary_hug74")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1981297275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1734962511]
+visible = false
+shape = SubResource("CapsuleShape2D_hug74")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://btxgo1r2j440a" path="res://Scripts/main_menu.gd" id="1_48xlc"]
 [ext_resource type="Script" uid="uid://crljnhvh7s34n" path="res://Scripts/audio_control.gd" id="3_1ehe0"]
 [ext_resource type="Script" uid="uid://dodq8mwa8245x" path="res://Scenes/fullscreen_control.gd" id="4_ce3w2"]
+[ext_resource type="FontFile" uid="uid://d18ch7kpuct2s" path="res://wiil/IrishGrover-Regular.ttf" id="4_n45e2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_erv1k"]
 modulate_color = Color(0.66492164, 0.66492164, 0.6649216, 1)
@@ -171,6 +172,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_n45e2")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_28flt")
@@ -199,8 +201,22 @@ offset_left = 131.0
 offset_top = 156.0
 offset_right = 464.0
 offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 18
 text = "FullScreen"
 script = ExtResource("4_ce3w2")
+
+[node name="Label2" type="Label" parent="Options" unique_id=1746940638]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 99.0
+offset_right = 205.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 18
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Button2" to="." method="_on_settings_pressed"]
